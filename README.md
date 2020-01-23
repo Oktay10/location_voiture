@@ -1,3 +1,5 @@
+Project Symfony
+
 Symfony Standard Edition
 ========================
 
