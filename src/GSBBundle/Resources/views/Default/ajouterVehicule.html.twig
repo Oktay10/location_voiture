@@ -1,0 +1,20 @@
+{% extends 'base3.html.twig' %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ asset('img/gsb_logo.png') }}" />
+<div class="login">
+  <div class="heading">
+    <h2>Ajouter voiture</h2>
+ 		{{ form_start(form) }}
+        {{ form_widget(form.numImmatriculation, {'attr': {'placeholder': 'immatriculation'}}) }}
+         {{ form_widget(form.marque, {'attr': {'placeholder': 'marque'}}) }} 
+           {{ form_widget(form.modele, {'attr': {'placeholder': 'modele'}}) }}
+         {{ form_widget(form.puissanceFiscale, {'attr': {'placeholder': 'puissanceFiscale'}}) }} 
+          {{ form_widget(form.kilometre, {'attr': {'placeholder': 'kilometre'}}) }} 
+           {{ form_widget(form.typVehicule, {'attr': {'placeholder': 'typVehicule'}}) }} 
+           {{ form_widget(form.capaStockage, {'attr': {'placeholder': 'capaStockage'}}) }} 
+        
+        <button type="submit" name="valider" class="float">Valider</button>
+       	{{ form_end(form) }}
+
+{%endblock%}

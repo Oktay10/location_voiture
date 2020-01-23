@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}GSB{% endblock %}</title>
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+        <img href="{{ asset('img/gsb_logo.png') }}" />
+
+        
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

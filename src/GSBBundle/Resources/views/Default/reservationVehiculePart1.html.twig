@@ -1,0 +1,81 @@
+{% extends 'base2.html.twig' %}
+
+
+
+{% block body %}
+<center>
+	<div class="container-fluid col-xs-6 col-xs-offset-3">
+		<div class="jumbotron">
+		    <h2>Reservation des véhicules disponibles</h2><hr><br>		    
+		    <form action="{{ path('reservation_vehicule')}}" class="form-horizontal" method=POST>
+
+		    	<div class="form-group">
+                        <label class="col-md-3 control-label">Date de début</label>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <input name="dateD" type="date" class="form-control">
+                            	<span class="input-group-addon">
+                               		<span class="glyphicon glyphicon-calendar"></span>
+                            	</span>
+                        	</div>
+                        <span class="help-block">Selectionner une date valable</span>
+                        </div>
+                </div>
+
+                <br/>
+
+                <div class="form-group">
+                        <label class="col-md-3 control-label">Date de fin</label>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <input name="dateF" type="date" class="form-control">
+                            	<span class="input-group-addon">
+                               		<span class="glyphicon glyphicon-calendar"></span>
+                            	</span>
+                        	</div>
+                        <span class="help-block">Selectionner une date valable</span>
+                        </div>
+                </div>
+
+                <div class="form-group">
+                        <label class="col-md-3 control-label">Capacité stockage véhicule</label>
+                        <div class="col-md-4">
+                            <select name="capacite" class="form-control">
+                            	<option value="<50">Inférieur à 50</option>
+                            	<option value="<150">Entre 50 et 150</option>
+                            	<option value=">150">Supérieur a 150</option>
+                            </select>
+                        	</div>                        
+                </div>
+                                 
+
+                <div class="form-group">
+	               <label class="col-xs-5 ">Type</label>
+					<div class="radio">
+						  <label class="col-md-9">
+						    <input type="radio" name="type" id="optionsRadios1" value="Electrique" >
+						    Electrique<br>						
+						    <input type="radio" name="type" id="optionsRadios1" value="Thermique">
+						    Thermique				    
+						</label>  
+					</div>
+				</div>			
+
+				 <div class="form-group">
+				    <div class="col-sm-offset-2 col-sm-10">
+				      <center>
+				      	<button type="submit" name ="continuer" class="btn btn-default">
+				      		Continuer <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				      	</button>
+				      </center>
+				    </div>
+				  </div>
+		    </form>
+		</div>
+	</div>
+ </center>
+
+	
+
+
+{%endblock%}

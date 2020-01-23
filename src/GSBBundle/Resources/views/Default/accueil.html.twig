@@ -1,0 +1,62 @@
+
+{% extends 'base2.html.twig' %}
+
+
+
+{% block body %}
+	<div id="panneluser" style="float : left;" class="container-fluid col-sm-3">
+		<div class="jumbotron">
+			<h2><center>Bienvenu {{ app.session.get('nom')}}</center></h2><hr>
+			Nom : {{app.session.get('nom')}}<br>
+			Prenom : {{app.session.get('prenom')}}<br>
+			Age : {{app.session.get('age')}}<br>
+			E-mail : {{app.session.get('email')}}<br>
+			Portable : {{app.session.get('tel')}}<br>
+			<hr>
+			<h2><center>Pense bête</center></h2><br>
+			<a href="{{ path('affichage_Formulaire_Pense_Bete')}}" style="text-decoration: none;">+ Nouveau</a>
+			{% for unPenseBete in LesPenseBetes %}
+			<h4>{{unPenseBete.pensebete}} 
+			<a href="{{ path('supprimer_Formulaire_Pense_Bete', {'id': unPenseBete.id}) }}">
+			<button type="button" class="btn btn-primary" href="{{ path('supprimer_Formulaire_Pense_Bete', {'id': unPenseBete.id}) }}">Supprimer</button></a>
+			</h4>
+			{% endfor %}
+		</div>
+
+	</div>
+	<div id="pannelreserv" style="float: right;" class="container-fluid col-xs-9">
+		<div class="jumbotron">
+		<center><h1>Récapitulatif de vos réservations</h1></center><br>
+		<table class="table">
+		<tr>
+			<th> Marque </th>
+			<th> Modele </th>
+			<th> Date de reservation </th>
+			<th> Date de debut de location </th>
+			<th> Date de fin de location </th>
+			<th> Rendre le véhicule </th>
+		<tr>
+			{% for uneReservation in LesReservations %}
+				{% if uneReservation.detail.estrendu != "Rendu" %}
+					<tr>
+						<td>{{uneReservation.reservation[0].marque}}</td>
+						<td>{{uneReservation.reservation[0].modele}}</td>
+						<td>{{uneReservation.detail.dateReservation|date('Y-m-d') }}</td>
+						<td>{{uneReservation.detail.dateDebutLoc|date('Y-m-d') }}</td>
+						<td>{{uneReservation.detail.dateFinLoc|date('Y-m-d') }}</td>				
+						<td><a href="{{ path('formulaire_Ap_Util', {'immat': uneReservation.reservation[0].numImmatriculation}) }}">
+						<button type="button" class="btn btn-primary" href="{{ path('formulaire_Ap_Util', {'immat': uneReservation.reservation[0].numImmatriculation}) }}">Rendre le véhicule</button></td></a></td>
+					</tr>
+				{% endif %}
+			{% endfor %}
+		</table>
+
+		</div>
+	</div>
+	
+
+	
+
+
+{%endblock%}
+

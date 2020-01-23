@@ -1,0 +1,12 @@
+
+<?php
+public function listeVehicule()
+{  
+    $Vehicule = $this->getDoctrine()
+    ->getRepository('GSBBundle:Vehicule')
+    ->findall();    
+    
+    return $this->render("GSBBundle:Default:index.html.twig", array(
+            'Vehicule' => $Vehicule,
+    ));   
+}

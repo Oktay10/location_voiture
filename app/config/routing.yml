@@ -1,0 +1,59 @@
+gsb:
+    resource: "@GSBBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+connexion:
+    path: /connexion
+
+valider_connexion:
+    path: /authentifier
+
+tableau_de_bord:
+    path: /testVehicule
+
+valider_deconnexion:
+    path: /deconnexion
+
+criteres_de_reservation:
+    path: /criteresVehicule
+    
+reservation_vehicule:
+    path: /reservationVehicule
+
+reservation_vehicule_action:
+    path: /reserverEnfinLeVehicule
+     
+         
+affichage_Formulaire_Pense_Bete:
+    path: /formulairePenseBete
+
+supprimer_Formulaire_Pense_Bete:
+    path: /supprimer_Formulaire_Pense_Bete/{id}  
+
+penseBete:
+    path: /penseBete
+   
+detailApresUtilisation:
+    path: /detailApresUtilisation 
+
+formulaire_Av_Util:
+    path: /formulaireAvantUtil
+
+formulaire_Ap_Util:
+    path: /formulaireApresUtil
+
+security_registration:
+    path: /security_registration       
+
+security_login:
+    path: /security_login
+
+tableau_de_bord_admin:
+    path: /tableau_de_bord_admin
+
+ajout_voiture:
+    path: /ajout_voiture

@@ -1,0 +1,27 @@
+{% extends 'base2.html.twig' %}
+
+{% block body %}
+<center>
+<div class="container-fluid col-xs-6 col-xs-offset-3">
+<div class="jumbotron"> 
+	<h1>Details apres utilisation</h1><hr><br>
+    <form action="{{ path('detailApresUtilisation' , {'immat': leVehicule }) }}" method="POST" class="form-horizontal">
+	<div class="form-group">
+        <div class="input-group input-group-lg">             
+							
+		Kilometrage COMPTEUR: <input type="text" name="kilometre"><br>													
+		Consommation: <input type="text" name="conso"> 		
+			
+        </div>
+		<div class="form-group">
+		<div class="input-group input-group-lg">
+	         <button type="submit" name="valider" class="float">Valider</button>
+        </div>
+	    </div>
+		</div>
+        
+        </form>
+  </div>
+</div> 	
+</center>
+{%endblock%}

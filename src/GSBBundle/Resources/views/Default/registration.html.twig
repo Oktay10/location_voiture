@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ asset('img/gsb_logo.png') }}" />
+<div class="login">
+  <div class="heading">
+    <h2>Inscription</h2>
+ 		{{ form_start(form) }}
+        {{ form_widget(form.nom, {'attr': {'placeholder': 'Nom'}}) }}
+         {{ form_widget(form.prenom, {'attr': {'placeholder': 'Prenom'}}) }} 
+           {{ form_widget(form.login, {'attr': {'placeholder': 'Login'}}) }}
+         {{ form_widget(form.mdp, {'attr': {'placeholder': 'Mot de passe'}}) }} 
+          {{ form_widget(form.age, {'attr': {'placeholder': 'Age'}}) }} 
+           {{ form_widget(form.email, {'attr': {'placeholder': 'Email'}}) }} 
+           {{ form_widget(form.tel, {'attr': {'placeholder': 'Portable'}}) }} 
+        
+        <button type="submit" name="valider" class="float">Valider</button>
+        <a href="{{ path('connexion')}}">Connexion</a>
+       	{{ form_end(form) }}
+
+{%endblock%}

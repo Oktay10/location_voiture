@@ -1,0 +1,32 @@
+{% extends 'base2.html.twig' %}
+
+
+
+{% block body %}
+	<center>
+	<div class="container-fluid col-xs-6 col-xs-offset-3">
+		<div class="jumbotron">
+		    <h2>Reservation des véhicules disponibles</h2>
+		    {% if lesVehiculesChoisi|length  == 0 %}
+			    <h1> Aucun vehicule disponible </h1>
+			    <a href="{{ path('tableau_de_bord') }}"> Retour a l'accueil </a>
+		    {% else %}
+		    <form action="{{ path('reservation_vehicule_action') }}" method=POST>		    
+		    Les Vehicules
+		    <select name="vehicule" data-live-search="true">
+		    <option value=""></option>
+			{% for vehicule in lesVehiculesChoisi %}
+			<option value="{{vehicule.numImmatriculation}}"><strong> Modele : </strong> {{vehicule.modele}} </strong> Marque : </strong> {{vehicule.marque}} <strong> Immatriculation : </strong> {{vehicule.numImmatriculation}}</option>
+			{% endfor %}
+			</select>
+		    <button type="submit" name="valider" class="float">Reserver</button>
+		    </form>
+		    {% endif %}
+		</div>
+	</div>
+	</center>
+
+	
+
+
+{%endblock%}

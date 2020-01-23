@@ -1,0 +1,29 @@
+{% extends 'base2.html.twig' %}
+
+{% block body %}
+<center>
+<div class="container-fluid col-xs-6 col-xs-offset-3">
+<div class="jumbotron">
+    <h1>Pense Bete</h1><hr><br>
+    <form action="{{ path('penseBete')}}" method="POST" class="form-horizontal">
+	<div class="form-group">
+        <div class="input-group input-group-lg">       
+        <textarea name="penseBete" rows="10" cols="60" placeholder="Saisir un texte ici."></textarea>
+
+        </div>
+		 <div class="form-group">
+				    <div class="col-sm-offset-2 col-sm-10"><br>
+				      <center>
+				      	<button type="submit" name ="valider" class="btn btn-default" style="margin-left: -150px;">
+				      		Valider <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				      	</button>
+				      </center>
+				    </div>
+				  </div>
+        </form>
+  </div>
+</div> 	
+ </div>	
+ </center>
+{%endblock%}
+
